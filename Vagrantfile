@@ -24,11 +24,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision "chef_zero" do |chef|
     chef.cookbooks_path = "home/git/data-team/data-team-devbox/cookbooks"
     chef.nodes_path = "home/git/data-team/data-team-devbox/nodes"
-    chef.add_recipe "ta_wrapper_perl::default"
-    chef.add_recipe "ta_wrapper_perl::perl-5.10.1"
-    chef.add_recipe "ta_wrapper_perl::perl-5.20.2"
-    chef.add_recipe "ta_wrapper_perl::perl-5.20.3"
-    chef.add_recipe "ta_wrapper_perl::perl-5.24.0"
+    chef.add_recipe "ta_wrapper_perl::all"
     chef.node_name = "devbox"
   end
 end
